@@ -8,6 +8,7 @@ public interface Service
 {
     List<Student> loadStudentDetails();
     List<Student> getDetails();
+
     public Student getById(int stdId);
     public Student addDetails(Student student);
 }
