@@ -28,10 +28,25 @@ public class Controller
     {
         return service.getById(studentId);
     }
-    @PostMapping("/createStudent")
+    @PostMapping("/createStudents")
     public Student createStudent(@RequestBody Student student)
     {
-        Student st= service.addDetails(student);
+        Student st=service.addDetails(student);
         return st;
+    }
+    @GetMapping("/student/getByBranch/{studentBranch}")
+    public List<Student> getByBranch(@PathVariable String studentBranch)
+    {
+        return service.getByBranch(studentBranch);
+    }
+    @PutMapping("/student/updateDetails/{studentId}")
+    public Student updateStudent(@PathVariable int studentId,@RequestBody Student student)
+    {
+        return service.updateStudent(studentId, student);
+    }
+    @DeleteMapping("/student/deleteDetails/{studentId}")
+    public Student deleteStudent(@PathVariable int studentId)
+    {
+        return service.deleteStudent(studentId);
     }
 }

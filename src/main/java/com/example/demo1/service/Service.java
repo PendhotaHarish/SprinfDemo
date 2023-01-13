@@ -6,9 +6,11 @@ import java.util.List;
 
 public interface Service
 {
-    List<Student> loadStudentDetails();
     List<Student> getDetails();
 
-    public Student getById(int stdId);
-    public Student addDetails(Student student);
+    Student getById(int stdId);
+    Student addDetails(Student student);
+    List<Student> getByBranch(String sBranch);
+    Student updateStudent(int stId, Student student);
+    Student deleteStudent(int sId);
 }

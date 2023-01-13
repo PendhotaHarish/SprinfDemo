@@ -5,6 +5,8 @@ public class Student
     private int studentId;
     private String studentName;
     private String studentMobileNo;
+    private String studentBranch;
+    private double studentPercentage;
 
     public int getStudentId() {
         return studentId;
@@ -27,13 +29,24 @@ public class Student
         return studentMobileNo;
     }
 
+    public String getStudentBranch() {
+        return studentBranch;
+    }
+
+    public void setStudentBranch(String studentBranch) {
+        this.studentBranch = studentBranch;
+    }
+
+    public double getStudentPercentage() {
+        return studentPercentage;
+    }
+
+    public void setStudentPercentage(double studentPercentage) {
+        this.studentPercentage = studentPercentage;
+    }
+
     public void setStudentMobileNo(String studentMobileNo) {
         this.studentMobileNo = studentMobileNo;
     }
 
-    public Student(int studentId, String studentName, String studentMobileNo) {
-        this.studentId = studentId;
-        this.studentName = studentName;
-        this.studentMobileNo = studentMobileNo;
-    }
 }
