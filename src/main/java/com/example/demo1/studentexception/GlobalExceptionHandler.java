@@ -12,14 +12,14 @@ import javax.servlet.http.HttpServletRequest;
 public class GlobalExceptionHandler
 {
     @ExceptionHandler(InvalidEntryException.class)
-    @ResponseStatus(HttpStatus.CONFLICT)
+    @ResponseStatus(HttpStatus.NOT_FOUND)
     public @ResponseBody ErrorInfo invalidEntry(InvalidEntryException e, HttpServletRequest req)
     {
-        return new ErrorInfo((HttpStatus.CONFLICT.value()),req.getRequestURI(),e.getMessage());
+        return new ErrorInfo((HttpStatus.NOT_FOUND.value()),req.getRequestURI(),e.getMessage());
     }
     @ExceptionHandler(EmptyListException.class)
-    @ResponseStatus(HttpStatus.BAD_REQUEST)
+    @ResponseStatus(HttpStatus.NOT_FOUND)
     public @ResponseBody ErrorInfo EmptyListException(EmptyListException e, HttpServletRequest req){
-        return new ErrorInfo((HttpStatus.BAD_REQUEST.value()),req.getRequestURI(),e.getMessage());
+        return new ErrorInfo((HttpStatus.NOT_FOUND.value()),req.getRequestURI(),e.getMessage());
     }
 }
